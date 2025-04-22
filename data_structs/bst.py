@@ -20,6 +20,7 @@ class BinarySearchTree:
         # If the value is less than the current node's value, go left
         # If the value is greater than the current node's value, go right
         if value == node.value:
+            # Can't do anything if the value already exists
             return
         elif value < node.value:
             if node.left is None:
@@ -39,7 +40,9 @@ class BinarySearchTree:
         return self._search_recursive(self.root, value)
 
     def _search_recursive(self, node: TreeNode, value: int):
-        if node is None or node.value == value:
+        if node is None:
+            return None
+        if node.value == value:
             return node
         elif value < node.value:
             return self._search_recursive(node.left, value)

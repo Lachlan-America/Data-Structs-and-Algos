@@ -73,3 +73,17 @@ class DequeQueue(Queue):
 
     def size(self):
         return len(self.queue)
+    
+class CircularQueue:
+    def __init__(self, size):
+        self.MAX_LENGTH = size
+        self.queue = [None] * size
+        self.start = 0
+        self.end = 0
+
+
+    def enqueue(self, item):
+        pass
+
+    def dequeue(self):
+        pass
